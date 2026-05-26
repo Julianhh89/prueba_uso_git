@@ -1,0 +1,11 @@
+id,nombre_comercial,nombre_generico,laboratorio,fecha_aprobacion,indicacion,presentacion,dosis_recomendada,efectos_adversos,contraindicaciones
+1,Aspirina,Ácido Acetilsalicílico,Bayer,1897-01-01,Analgesia y anticoagulación,Tableta 100mg,100-500mg cada 4-6 horas,Dispepsia,Alergia al AAS
+2,Ibupirac,Ibuprofeno,Grupo Farmacéutico,1961-01-01,Antiinflamatorio y analgésico,Tableta 200mg,200-400mg cada 6-8 horas,Gastritis,Úlcera péptica
+3,Amoxicilina,Amoxicilina,Pfizer,1972-01-01,Infección bacteriana,Cápsula 500mg,500mg-1g cada 8 horas,Alergia,Reacción alérgica a penicilinas
+4,Omeprazol,Omeprazol,Astra Zeneca,1989-01-01,Reflujo gastroesofágico,Cápsula 20mg,20-40mg diarios,Cefalea,Hipersensibilidad
+5,Metformina,Metformina,Merck,1995-01-01,Diabetes tipo 2,Tableta 500mg,1500-2000mg diarios,Nausea,Insuficiencia renal
+6,Lisinopril,Lisinopril,Astra Zeneca,1987-01-01,Hipertensión arterial,Tableta 10mg,10-40mg diarios,Tos,Embarazo
+7,Atorvastatina,Atorvastatina,Pfizer,1997-01-01,Hipercolesterolemia,Tableta 20mg,10-80mg diarios,Mialgia,Enfermedad hepática activa
+8,Loratadina,Loratadina,Schering,1993-01-01,Alergia,Tableta 10mg,10mg diarios,Somnolencia,Hipersensibilidad
+9,Paracetamol,Acetaminofén,GSK,1956-01-01,Fiebre y dolor,Tableta 500mg,500-1000mg cada 6 horas,Hepatotoxicidad,Hipersensibilidad
+10,Fluconazol,Fluconazol,Pfizer,1990-01-01,Infección fúngica,Cápsula 150mg,150mg dosis única,Cefalea,Hipersensibilidad
