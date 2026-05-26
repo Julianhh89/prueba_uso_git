@@ -1,167 +1,215 @@
-# Base de Datos de Fármacos Aprobados
+# 💊 Base de Datos de Fármacos Aprobados
 
-## 📋 Descripción
+Este proyecto contiene una base de datos completa de fármacos aprobados con un gestor interactivo para consultar, buscar y administrar medicamentos.
 
-Este proyecto contiene una base de datos de fármacos aprobados con información relevante incluyendo:
-- Nombres comerciales y genéricos
-- Laboratorios fabricantes
-- Indicaciones terapéuticas
-- Presentaciones y dosis recomendadas
-- Efectos adversos y contraindicaciones
-
-## 📁 Estructura del Proyecto
+## 📋 Estructura del Proyecto
 
 ```
-├── datos_farmacos.csv       # Base de datos en formato CSV
-├── gestor_farmacos.py       # Script Python para gestionar la BD
-├── README.md                # Este archivo
-└── farmacos.json            # Exportación de la BD en JSON (generado)
+├── datos_farmacos.csv        # Base de datos de fármacos
+├── gestor_farmacos.py        # Script de gestión
+└── README.md                 # Documentación
 ```
 
-## 🗄️ Contenido de la Base de Datos
+## 📊 Base de Datos
 
 La base de datos incluye los siguientes campos:
 
 | Campo | Descripción |
 |-------|-------------|
-| id | Identificador único del fármaco |
-| nombre_comercial | Nombre con el que se vende el medicamento |
-| nombre_generico | Nombre químico/genérico del principio activo |
-| laboratorio | Fabricante del fármaco |
-| fecha_aprobacion | Fecha de aprobación regulatoria |
-| indicacion | Uso terapéutico del medicamento |
-| presentacion | Forma farmacéutica y concentración |
-| dosis_recomendada | Dosis estándar de administración |
-| efectos_adversos | Posibles efectos secundarios |
-| contraindicaciones | Situaciones donde NO debe usarse |
+| **id** | Identificador único del fármaco |
+| **nombre_comercial** | Nombre bajo el cual se comercializa |
+| **nombre_generico** | Principio activo del medicamento |
+| **laboratorio** | Fabricante del fármaco |
+| **fecha_aprobacion** | Fecha de aprobación regulatoria |
+| **indicacion** | Uso terapéutico principal |
+| **presentacion** | Forma farmacéutica y dosis |
+| **dosis_recomendada** | Dosis y pauta de administración |
+| **efectos_adversos** | Posibles reacciones adversas |
+| **contraindicaciones** | Casos en los que NO debe usarse |
 
-## 🐍 Uso del Script Python
+## 🔍 Fármacos Incluidos
+
+1. **Aspirina** - Ácido Acetilsalicílico (Bayer)
+   - Indicación: Analgesia y anticoagulación
+   - Dosis: 100-500mg cada 4-6 horas
+
+2. **Ibupirac** - Ibuprofeno (Grupo Farmacéutico)
+   - Indicación: Antiinflamatorio y analgésico
+   - Dosis: 200-400mg cada 6-8 horas
+
+3. **Amoxicilina** - Amoxicilina (Pfizer)
+   - Indicación: Infección bacteriana
+   - Dosis: 500mg-1g cada 8 horas
+
+4. **Omeprazol** - Omeprazol (Astra Zeneca)
+   - Indicación: Reflujo gastroesofágico
+   - Dosis: 20-40mg diarios
+
+5. **Metformina** - Metformina (Merck)
+   - Indicación: Diabetes tipo 2
+   - Dosis: 1500-2000mg diarios
+
+6. **Lisinopril** - Lisinopril (Astra Zeneca)
+   - Indicación: Hipertensión arterial
+   - Dosis: 10-40mg diarios
+
+7. **Atorvastatina** - Atorvastatina (Pfizer)
+   - Indicación: Hipercolesterolemia
+   - Dosis: 10-80mg diarios
+
+8. **Loratadina** - Loratadina (Schering)
+   - Indicación: Alergia
+   - Dosis: 10mg diarios
+
+9. **Paracetamol** - Acetaminofén (GSK)
+   - Indicación: Fiebre y dolor
+   - Dosis: 500-1000mg cada 6 horas
+
+10. **Fluconazol** - Fluconazol (Pfizer)
+    - Indicación: Infección fúngica
+    - Dosis: 150mg dosis única
+
+## 🚀 Cómo Usar
 
 ### Instalación
 
-No requiere dependencias externas, solo Python 3.6+
+```bash
+# No requiere dependencias externas, solo Python 3.x
+python --version  # Verificar Python 3.x
+```
+
+### Ejecutar el Gestor
 
 ```bash
 python gestor_farmacos.py
 ```
 
-### Funcionalidades Principales
+### Ejemplos de Uso
 
-#### 1. Buscar por Nombre
-```python
-from gestor_farmacos import GestorFarmacos
-
-gestor = GestorFarmacos("datos_farmacos.csv")
-resultados = gestor.buscar_por_nombre("Aspirina")
+#### 1. Buscar un fármaco por nombre
+```
+Opción: 1
+Ingrese el nombre: Aspirina
 ```
 
-#### 2. Buscar por Indicación
-```python
-resultados = gestor.buscar_por_indicacion("Hipertension")
+#### 2. Buscar por indicación terapéutica
+```
+Opción: 2
+Ingrese la indicación: Hipertensión
 ```
 
-#### 3. Buscar por Laboratorio
-```python
-resultados = gestor.buscar_por_laboratorio("Pfizer")
+#### 3. Buscar por laboratorio
+```
+Opción: 3
+Ingrese el laboratorio: Pfizer
 ```
 
-#### 4. Obtener Fármaco por ID
-```python
-farmaco = gestor.obtener_farmaco_por_id("1")
+#### 4. Ver todos los fármacos
+```
+Opción: 4
 ```
 
-#### 5. Listar Todos los Fármacos
-```python
-gestor.listar_todos()
+#### 5. Ver estadísticas
+```
+Opción: 5
 ```
 
 #### 6. Exportar a JSON
-```python
-gestor.exportar_json("farmacos.json")
+```
+Opción: 6
+# Genera: farmacos.json
 ```
 
-#### 7. Obtener Estadísticas
-```python
-stats = gestor.obtener_estadisticas()
-print(stats['total_farmacos'])
+#### 7. Agregar un nuevo fármaco
+```
+Opción: 7
+Nombre comercial: [ingrese nombre]
+Nombre genérico: [ingrese principio activo]
+...
 ```
 
-## 📊 Fármacos Incluidos
-
-La base de datos inicial contiene 10 fármacos aprobados:
-
-1. **Aspirina** - Analgesia y anticoagulación
-2. **Ibupirac** - Antiinflamatorio
-3. **Amoxicilina** - Antibiótico
-4. **Omeprazol** - Reflujo gástrico
-5. **Metformina** - Diabetes tipo 2
-6. **Lisinopril** - Hipertensión
-7. **Atorvastatina** - Hipercolesterolemia
-8. **Loratadina** - Alergia
-9. **Paracetamol** - Fiebre y dolor
-10. **Fluconazol** - Infección fúngica
-
-## 🔧 Cómo Agregar Nuevos Fármacos
-
-### Opción 1: Directamente en el CSV
-1. Abre `datos_farmacos.csv`
-2. Agrega una nueva fila con los datos del fármaco
-3. Guarda el archivo
-
-### Opción 2: Usando el script Python
-```python
-nuevo_farmaco = {
-    'id': '11',
-    'nombre_comercial': 'Nombre Comercial',
-    'nombre_generico': 'Nombre Genérico',
-    'laboratorio': 'Laboratorio',
-    'fecha_aprobacion': '2025-01-01',
-    'indicacion': 'Indicación',
-    'presentacion': 'Presentación',
-    'dosis_recomendada': 'Dosis',
-    'efectos_adversos': 'Efectos',
-    'contraindicaciones': 'Contraindicaciones'
-}
-
-gestor.agregar_farmaco(nuevo_farmaco)
-```
-
-## 📝 Ejemplo de Uso Completo
+## 💻 Uso Programático
 
 ```python
 from gestor_farmacos import GestorFarmacos
 
-# Inicializar
-gestor = GestorFarmacos("datos_farmacos.csv")
+# Crear instancia del gestor
+gestor = GestorFarmacos('datos_farmacos.csv')
 
-# Buscar fármacos para hipertensión
-antihipertensivos = gestor.buscar_por_indicacion("Hipertension")
-print(f"Encontrados {len(antihipertensivos)} antihipertensivos")
+# Buscar un fármaco
+resultados = gestor.buscar_por_nombre('Aspirina')
+for farmaco in resultados:
+    print(farmaco['nombre_comercial'])
 
-# Obtener estadísticas
-stats = gestor.obtener_estadisticas()
-print(f"Total: {stats['total_farmacos']} fármacos")
-print(f"Laboratorios: {stats['laboratorios']}")
+# Buscar por indicación
+antibioticos = gestor.buscar_por_indicacion('Infección')
+
+# Buscar por laboratorio
+farmacos_pfizer = gestor.buscar_por_laboratorio('Pfizer')
+
+# Obtener por ID
+farmaco = gestor.obtener_por_id('1')
+
+# Obtener todos
+todos = gestor.listar_todos()
 
 # Exportar a JSON
-gestor.exportar_json()
+gestor.exportar_a_json()
+
+# Ver estadísticas
+stats = gestor.estadisticas()
+print(f"Total de fármacos: {stats['total_farmacos']}")
+
+# Agregar nuevo fármaco
+nuevo = {
+    'nombre_comercial': 'Nuevo Fármaco',
+    'nombre_generico': 'Principio Activo',
+    'laboratorio': 'Lab X',
+    'indicacion': 'Tratamiento Y',
+    'presentacion': 'Tableta 100mg',
+    'dosis_recomendada': '100mg diarios',
+    'efectos_adversos': 'Leve molestia',
+    'contraindicaciones': 'Embarazo'
+}
+gestor.agregar_farmaco(nuevo)
 ```
 
-## ⚠️ Importante
+## 📝 Funcionalidades Principales
 
-- Esta base de datos es solo para propósitos educativos y de demostración
-- No debe usarse como referencia médica oficial
-- Consulta siempre con profesionales de la salud autorizados
-- Verifica la información actual en registros farmacéuticos oficiales
+- ✅ Búsqueda por nombre comercial o genérico
+- ✅ Búsqueda por indicación terapéutica
+- ✅ Búsqueda por laboratorio fabricante
+- ✅ Listado completo de fármacos
+- ✅ Estadísticas de la base de datos
+- ✅ Exportación a formato JSON
+- ✅ Agregar nuevos fármacos
+- ✅ Persistencia de datos en CSV
+- ✅ Interfaz interactiva de menú
+- ✅ Uso programático desde otros scripts
+
+## 🛠️ Requisitos
+
+- Python 3.6+
+- Sistema operativo: Windows, macOS, Linux
+- Librerías estándar (csv, json, datetime)
 
 ## 📄 Licencia
 
-Este proyecto es de acceso público.
+Este proyecto es de código abierto y puede ser utilizado libremente.
 
-## 👤 Autor
+## 👨‍💻 Autor
 
-Creado por Julianhh89
+Creado por: Julianhh89
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Por favor:
+1. Fork el repositorio
+2. Crea una rama con tu feature
+3. Commit tus cambios
+4. Push a la rama
+5. Abre un Pull Request
 
 ---
 
-**Última actualización:** Mayo 2026
+**Última actualización:** 2026-05-26
